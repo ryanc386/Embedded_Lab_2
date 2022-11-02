@@ -24,7 +24,13 @@ StopWDT     mov.w   #WDTPW|WDTHOLD,&WDTCTL  ; Stop watchdog timer
 ; Main loop here
 ;-------------------------------------------------------------------------------
 Initial:
-	mov.w #
+	mov.w #0000, &2000h;
+	mov.w #0000, &2002h;
+	mov.w #0000, &2004h;
+	mov.w #0000, &2006h;
+	mov.w #0000, &2008h;
+	mov.w #0006, R4;
+	mov.w #0005, R5;
 Main:
 	cmp R4, R5;
 	jl Less;
